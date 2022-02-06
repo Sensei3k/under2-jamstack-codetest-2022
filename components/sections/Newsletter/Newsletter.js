@@ -12,10 +12,10 @@ Newsletter.propTypes = {
 
 export function Newsletter({ className = "" }) {
     const inputs = [
-        {name: "First name"},
-        {name: "Last name"},
-        {name: "Email"},
-        {name: "Company"}
+        {_id: 1, name: "First name"},
+        {_id: 2, name: "Last name"},
+        {_id: 3, name: "Email"},
+        {_id: 4, name: "Company"}
     ];
 
     return (
