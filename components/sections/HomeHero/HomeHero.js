@@ -21,7 +21,11 @@ export function HomeHero({ className = "" }) {
                     <Button href="#">Schedule a demo</Button>
                 </div>
                 <div className="order-1 md:order-2 md:col-span-7">
-                    <img src="/images/hero-image.png" width="657" height="571" alt="" />
+                    <picture>
+                        <source type="image/webp" srcSet="/images/hero-image-small.webp" />
+                        <source type="image/png" srcSet="/images/hero-image-small.png" />
+                        <img src="/images/hero-image-small.png" width="657" height="571" alt="" />
+                    </picture>
                 </div>
             </Container>
         </header>
