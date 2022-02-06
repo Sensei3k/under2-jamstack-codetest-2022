@@ -8,14 +8,14 @@ Input.propTypes = {
     label: PropTypes.string
 }
 
-export function Input({ className = "", type, label }) {
+export function Input({ className = "", type, label }, props) {
     
     const baseClassName = `inline-block bg-blue-700 hover:bg-blue-800 px-5 py-4 rounded-md text-white`
     
     return (
         <div className={`${baseClassName} ${className}`}>
             <label>{label}</label>
-            <input type={type} />
+            <input type={type} {...props} />
         </div>
     )
 }

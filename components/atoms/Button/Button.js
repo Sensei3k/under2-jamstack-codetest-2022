@@ -5,9 +5,10 @@ import PropTypes from "prop-types"
 Button.propTypes = {
     className: PropTypes.string,
     children: PropTypes.node,
+    type: PropTypes.string,
 }
 
-export function Button({ className = "", href, children }) {
+export function Button({ className = "", href, children, type }) {
     
     const baseClassName = `inline-block bg-blue-700 hover:bg-blue-800 px-5 py-4 rounded-md text-white`
 
@@ -18,7 +19,7 @@ export function Button({ className = "", href, children }) {
     }
     
     return (
-        <button className={`${baseClassName} ${className}`}>
+        <button className={`${baseClassName} ${className}`} type={type}>
             {children}
         </button>
     )
