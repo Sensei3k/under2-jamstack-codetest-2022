@@ -8,9 +8,9 @@ We've put together a short code exercise so we can better understand your develo
 - [x] Get your development server running
 
 ## Part 2 — Deploying to netlify
-- [ ] Wire up a free netlify account to your git repo
-- [ ] build the next project to a new netlify site
-- [ ] add the site name here
+- [x] Wire up a free netlify account to your git repo
+- [x] build the next project to a new netlify site
+- [x] Mula Reporting `https://mula-reporting.netlify.app`
 ## Part 3 — Performance troubleshooting
 Our site is fast out of the box but there are a couple of quick wins we can grab to speed the page up further.
 - [ ] Run a lighthouse test (in a guest tab) and record the results
