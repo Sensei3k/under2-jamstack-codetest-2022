@@ -13,9 +13,7 @@ import { Newsletter } from '../components/sections/Newsletter/Newsletter'
 import featuredPartnersJSON from '../content/featured-partners.json'
 import latestArticlesJSON from '../content/latest-articles.json'
 
-export function getStaticProps() {
-  return { props: {} }
-}
+import toast from 'react-hot-toast';
 
 export default function Home() {
   const inputRef = useRef();
@@ -44,8 +42,9 @@ export default function Home() {
     try {
       await Axios.post('https://under2.free.beeceptor.com/submit', values);
       clearForm();
+      toast.success('Successfully submitted the details');
     } catch (error) {
-      console.log(error);
+      toast.error('Error with form submission');
     }
   }
 

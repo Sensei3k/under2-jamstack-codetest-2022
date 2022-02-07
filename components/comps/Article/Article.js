@@ -46,7 +46,7 @@ export function Article({
       />
       <div className='space-y-2'>
         <TextBlock theme='subtle'>{dateToString(date)}</TextBlock>
-        <Heading size='sm' className='text-sm sm:text-lg'>
+        <Heading size='sm' className='text-sm sm:text-lg md:h-12'>
           {title}
         </Heading>
       </div>

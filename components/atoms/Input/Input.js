@@ -7,13 +7,13 @@ Input.propTypes = {
 }
 
 export function Input({ className = '', label, ...props }) {
-  const baseClassName = `max-w-sm space-y-2 mb-2`
+  const baseClassName = `max-w-sm space-y-2 mb-3`
 
   return (
     <div className={`${baseClassName} ${className}`}>
-      <label for={label} className='inline-block text-gray-600 text-center'>{label}</label>
+      <label htmlFor={label} className='inline-block text-gray-600 text-center'>{label}</label>
       <input
-        className='w-full focus:outline-none focus:ring-2'
+        className='w-full focus:outline-none focus:ring-2 h-10 border-solid border-2 rounded px-2'
         {...props}
       />
     </div>

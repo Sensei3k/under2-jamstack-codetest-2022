@@ -13,7 +13,7 @@ export function Form({ className = '', ...props }) {
       {props.inputs.map((item) => (
         <Input key={item._id} id={item.label} label={item.label} name={item.name} onChange={props.onChange} />
         ))}
-      <Button type='submit' className='w-3/4 my-4'>
+      <Button type='submit' className='w-1/3 my-4 md:w-3/4'>
         Subscribe
       </Button>
     </form>
