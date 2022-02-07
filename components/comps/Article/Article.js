@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Link from 'next/link'
 import { Heading } from '../../atoms/Heading'
 import { TextBlock } from '../../atoms/TextBlock'
 
@@ -32,6 +33,7 @@ export function Article({
   date,
   height,
   width,
+  linkHref,
 }) {
   return (
     <div
@@ -46,9 +48,13 @@ export function Article({
       />
       <div className='space-y-2'>
         <TextBlock theme='subtle'>{dateToString(date)}</TextBlock>
-        <Heading size='sm' className='text-sm sm:text-lg md:h-12'>
-          {title}
-        </Heading>
+        <Link href={linkHref}>
+          <a>
+            <Heading size='sm' className='text-sm sm:text-lg md:h-12'>
+              {title}
+            </Heading>
+          </a>
+        </Link>
       </div>
     </div>
   )

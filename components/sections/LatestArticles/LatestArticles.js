@@ -23,6 +23,9 @@ export function LatestArticles({ className = '', articles }) {
                 date={article.publishDate}
                 src={article.coverImage}
                 alt={article.heading}
+                linkHref={article.url}
+                width={article.width}
+                height={article.height}
               />
             ))}
           </div>
