@@ -11,7 +11,9 @@ export function Input({ className = '', label, ...props }) {
 
   return (
     <div className={`${baseClassName} ${className}`}>
-      <label htmlFor={label} className='inline-block text-gray-600 text-center'>{label}</label>
+      <label htmlFor={label} className='inline-block text-gray-600 text-center'>
+        {label}
+      </label>
       <input
         className='w-full focus:outline-none focus:ring-2 h-10 border-solid border-2 rounded px-2'
         {...props}

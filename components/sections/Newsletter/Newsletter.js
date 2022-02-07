@@ -10,13 +10,13 @@ Newsletter.propTypes = {
   children: PropTypes.node,
 }
 
-export function Newsletter({ className = "", ...props }) {
-    const inputs = [
-        {_id: 1, label: "First name", name: "firstName"},
-        {_id: 2, label: "Last name", name: "lastName"},
-        {_id: 3, label: "Email", name: "email"},
-        {_id: 4, label: "Company", name: "company"}
-    ];
+export function Newsletter({ className = '', ...props }) {
+  const inputs = [
+    { _id: 1, label: 'First name', name: 'firstName' },
+    { _id: 2, label: 'Last name', name: 'lastName' },
+    { _id: 3, label: 'Email', name: 'email' },
+    { _id: 4, label: 'Company', name: 'company' },
+  ]
 
   return (
     <section className={`bg-gray-100 ${className}`}>

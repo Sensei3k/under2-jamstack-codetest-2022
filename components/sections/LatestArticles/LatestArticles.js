@@ -17,13 +17,14 @@ export function LatestArticles({ className = '', articles }) {
           <Heading className=''>The latest from Mula</Heading>
           <div className='grid gap-3 md:grid-cols-3 '>
             {articles.map((article) => (
-              <Article
-                key={article._id}
-                title={article.heading}
-                date={article.publishDate}
-                src={article.coverImage}
-                alt={article.heading}
-              />
+                <Article
+                  key={article._id}
+                  title={article.heading}
+                  date={article.publishDate}
+                  src={article.coverImage}
+                  alt={article.heading}
+                  linkhref={article.url}
+                />
             ))}
           </div>
         </div>

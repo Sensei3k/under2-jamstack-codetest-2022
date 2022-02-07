@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useState, useRef } from 'react'
-import Axios from 'axios';
+import Axios from 'axios'
 
 import { FeaturedBenefits } from '../components/sections/FeaturedBenefits'
 import { FeaturedPartners } from '../components/sections/FeaturedPartners/FeaturedPartners'
@@ -13,38 +13,36 @@ import { Newsletter } from '../components/sections/Newsletter/Newsletter'
 import featuredPartnersJSON from '../content/featured-partners.json'
 import latestArticlesJSON from '../content/latest-articles.json'
 
-import toast from 'react-hot-toast';
+import toast from 'react-hot-toast'
 
 export default function Home() {
-  const inputRef = useRef();
+  const inputRef = useRef()
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
     email: '',
-    company: ''
+    company: '',
   })
 
   const clearForm = () => {
-    inputRef.current.reset();
+    inputRef.current.reset()
   }
 
   const handleChange = (e) => {
-    e.preventDefault();
-    console.log('current', inputRef.current)
     setValues((values) => ({
       ...values,
       [e.target.name]: e.target.value,
-    }));
+    }))
   }
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault()
     try {
-      await Axios.post('https://under2.free.beeceptor.com/submit', values);
-      clearForm();
-      toast.success('Successfully submitted the details');
+      await Axios.post('https://under2.free.beeceptor.com/submit', values)
+      clearForm()
+      toast.success('Successfully submitted the details')
     } catch (error) {
-      toast.error('Error with form submission');
+      toast.error('Error with form submission')
     }
   }
 
@@ -67,7 +65,11 @@ export default function Home() {
         <FeaturedBenefits padding='mdTopOnly' />
         <FeaturedPartners partners={featuredPartnersJSON} />
         <LatestArticles articles={latestArticlesJSON} />
-        <Newsletter onChange={handleChange} onSubmit={handleSubmit} inputRef={inputRef} />
+        <Newsletter
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+          inputRef={inputRef}
+        />
       </div>
       <GlobalFooter />
     </>
