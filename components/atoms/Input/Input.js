@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from '../Link'
 import PropTypes from 'prop-types'
 
 Input.propTypes = {
@@ -13,7 +12,10 @@ export function Input({ className = '', label }, props) {
   return (
     <div className={`${baseClassName} ${className}`}>
       <label className='inline-block text-gray-600 text-center'>{label}</label>
-      <input className='bg-grey-light w-full' {...props} />
+      <input
+        className='w-full focus:outline-none focus:ring-2'
+        {...props}
+      />
     </div>
   )
 }
