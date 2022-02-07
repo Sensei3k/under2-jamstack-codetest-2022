@@ -37,7 +37,7 @@ export function Article({
 }) {
   return (
     <div
-      className={`grid grid-cols-2 gap-4 items-center md:grid-cols-1 md:gap-4`}
+      className={className}
     >
       <img
         src={src}

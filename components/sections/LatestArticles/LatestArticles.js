@@ -10,6 +10,7 @@ LatestArticles.propTypes = {
 }
 
 export function LatestArticles({ className = '', articles }) {
+  let articleStyle = `grid grid-cols-2 gap-4 items-center md:grid-cols-1 md:gap-4`;
   return (
     <section className={` ${className}`}>
       <Container>
@@ -26,6 +27,7 @@ export function LatestArticles({ className = '', articles }) {
                 linkHref={article.url}
                 width={article.width}
                 height={article.height}
+                className={articleStyle}
               />
             ))}
           </div>
