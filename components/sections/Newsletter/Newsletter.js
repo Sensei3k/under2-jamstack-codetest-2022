@@ -23,7 +23,7 @@ export function Newsletter({ className = "" }) {
             <Container className="md:items-center">
                 <div className="col-span-full md:order-1 md:col-span-5">
                     <Heading>Financial Tech trends, straight to your inbox.</Heading>
-                    <TextBlock theme="subtle">sign up for trends, reports and papers on everything finance, and tech in the banking world.</TextBlock>
+                    <TextBlock theme="subtle">Sign up for trends, reports and papers on everything finance, and tech in the banking world.</TextBlock>
                 </div>
                 <div className="md:order-2 md:col-span-7">
                     <Form inputs={inputs} />

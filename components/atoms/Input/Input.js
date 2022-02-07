@@ -1,20 +1,19 @@
-import React from "react"
-import { Link } from "../Link"
-import PropTypes from "prop-types"
+import React from 'react'
+import { Link } from '../Link'
+import PropTypes from 'prop-types'
 
 Input.propTypes = {
-    className: PropTypes.string,
-    label: PropTypes.string
+  className: PropTypes.string,
+  label: PropTypes.string,
 }
 
-export function Input({ className = "", label }, props) {
-    
-    const baseClassName = `inline-block bg-blue-700 hover:bg-blue-800 px-5 py-4 rounded-md text-white`
-    
-    return (
-        <div className={`${baseClassName} ${className}`}>
-            <label>{label}</label>
-            <input {...props} />
-        </div>
-    )
+export function Input({ className = '', label }, props) {
+  const baseClassName = `max-w-sm space-y-2 mb-2`
+
+  return (
+    <div className={`${baseClassName} ${className}`}>
+      <label className='inline-block text-gray-600 text-center'>{label}</label>
+      <input className='bg-grey-light w-full' {...props} />
+    </div>
+  )
 }

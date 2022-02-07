@@ -14,7 +14,6 @@ export function Form({ className = "", inputs }) {
             {inputs.map(item => 
                 <Input key={item._id} label={item.name} {...item} />
             )}
-            <Input label="first name" />
             <Button type="submit">Subscribe</Button>
         </form>
     )
