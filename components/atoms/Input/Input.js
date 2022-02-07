@@ -6,12 +6,12 @@ Input.propTypes = {
   label: PropTypes.string,
 }
 
-export function Input({ className = '', label }, props) {
+export function Input({ className = '', label, ...props }) {
   const baseClassName = `max-w-sm space-y-2 mb-2`
 
   return (
     <div className={`${baseClassName} ${className}`}>
-      <label className='inline-block text-gray-600 text-center'>{label}</label>
+      <label for={label} className='inline-block text-gray-600 text-center'>{label}</label>
       <input
         className='w-full focus:outline-none focus:ring-2'
         {...props}

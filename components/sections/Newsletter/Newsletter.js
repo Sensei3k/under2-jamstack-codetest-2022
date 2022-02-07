@@ -10,13 +10,13 @@ Newsletter.propTypes = {
   children: PropTypes.node,
 }
 
-export function Newsletter({ className = '' }) {
-  const inputs = [
-    { _id: 1, name: 'First name' },
-    { _id: 2, name: 'Last name' },
-    { _id: 3, name: 'Email' },
-    { _id: 4, name: 'Company' },
-  ]
+export function Newsletter({ className = "", ...props }) {
+    const inputs = [
+        {_id: 1, label: "First name", name: "firstName"},
+        {_id: 2, label: "Last name", name: "lastName"},
+        {_id: 3, label: "Email", name: "email"},
+        {_id: 4, label: "Company", name: "company"}
+    ];
 
   return (
     <section className={`bg-gray-100 ${className}`}>
@@ -29,7 +29,7 @@ export function Newsletter({ className = '' }) {
           </TextBlock>
         </div>
         <div className='md:order-2 md:col-span-7'>
-          <Form inputs={inputs} />
+          <Form inputs={inputs} {...props} />
         </div>
       </Container>
     </section>

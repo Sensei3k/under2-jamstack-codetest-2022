@@ -7,12 +7,12 @@ Form.propTypes = {
   className: PropTypes.string,
 }
 
-export function Form({ className = '', inputs }) {
+export function Form({ className = '', ...props }) {
   return (
-    <form className={`gap-4 sm:grid sm:grid-cols-2` + className}>
-      {inputs.map((item) => (
-        <Input key={item._id} label={item.name} {...item} />
-      ))}
+    <form onSubmit={props.onSubmit} className={`gap-4 sm:grid sm:grid-cols-2` + className} ref={props.inputRef}>
+      {props.inputs.map((item) => (
+        <Input key={item._id} id={item.label} label={item.label} name={item.name} onChange={props.onChange} />
+        ))}
       <Button type='submit' className='w-3/4 my-4'>
         Subscribe
       </Button>

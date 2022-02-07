@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import { useState, useRef } from 'react'
+import Axios from 'axios';
 
 import { FeaturedBenefits } from '../components/sections/FeaturedBenefits'
 import { FeaturedPartners } from '../components/sections/FeaturedPartners/FeaturedPartners'
@@ -16,6 +18,37 @@ export function getStaticProps() {
 }
 
 export default function Home() {
+  const inputRef = useRef();
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    company: ''
+  })
+
+  const clearForm = () => {
+    inputRef.current.reset();
+  }
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    console.log('current', inputRef.current)
+    setValues((values) => ({
+      ...values,
+      [e.target.name]: e.target.value,
+    }));
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await Axios.post('https://under2.free.beeceptor.com/submit', values);
+      clearForm();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <Head>
@@ -35,7 +68,7 @@ export default function Home() {
         <FeaturedBenefits padding='mdTopOnly' />
         <FeaturedPartners partners={featuredPartnersJSON} />
         <LatestArticles articles={latestArticlesJSON} />
-        <Newsletter />
+        <Newsletter onChange={handleChange} onSubmit={handleSubmit} inputRef={inputRef} />
       </div>
       <GlobalFooter />
     </>

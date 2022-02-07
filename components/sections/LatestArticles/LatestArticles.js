@@ -22,6 +22,7 @@ export function LatestArticles({ className = '', articles }) {
                 title={article.heading}
                 date={article.publishDate}
                 src={article.coverImage}
+                alt={article.heading}
               />
             ))}
           </div>
